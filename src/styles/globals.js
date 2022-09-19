@@ -1,4 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
+import '@fontsource/ubuntu-mono';
+import '@fontsource/ubuntu-mono/700.css';
+import '@fontsource/open-sans';
+import '@fontsource/open-sans/700.css';
 
 const GlobalStyles = createGlobalStyle`
     * {

@@ -27,12 +27,7 @@ export const Host = styled.span`
 
 export const ExternalLink = styled.a`
   color: ${({ theme }) => theme.text};
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: row;
-  align-items: center;
-  text-decoration: none;
+  display: inline-block;
 `;
 
 export const Description = styled.div`
