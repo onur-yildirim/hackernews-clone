@@ -6,8 +6,7 @@ const initialState = {
   storyData: [],
   savedNews: [],
   page: 0,
-  isFetching: false,
-  error: ''
+  isFetching: false
 };
 
 export const fetchLatestStoryIds = createAsyncThunk('stories/fetchLatestStoryIds', async () => {

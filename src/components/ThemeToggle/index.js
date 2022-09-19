@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { setTheme } from 'store/reducers/app';
@@ -9,10 +11,10 @@ export default function ThemeToggle() {
   const { theme } = useSelector((state) => state.app);
   const isLightTheme = theme === 'light';
 
-  function handleClick() {
+  const handleClick = useCallback(() => {
     var targetTheme = isLightTheme ? 'dark' : 'light';
     dispatch(setTheme(targetTheme));
-  }
+  }, [isLightTheme]);
 
   return (
     <ThemeToggleWrapper onClick={() => handleClick()}>

@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { Redirect, useParams } from 'react-router-dom';
+import { useCallback, useEffect, useState } from 'react';
+import { Navigate, useParams } from 'react-router-dom';
 
 import hackerNewsApi from 'services/hackerNewsApi';
 import CommentItem from 'components/CommentItem';
@@ -36,10 +36,13 @@ export default function Detail() {
 
   return (
     <ul>
+      {item && item.type !== 'story' ? <Navigate to="/404" /> : ''}
       {item ? <ListItem data={item} /> : ''}
-      {comments.map((data) => (
-        <CommentItem key={data.id} data={data} />
-      ))}
+      {comments.length ? (
+        comments.map((data) => <CommentItem key={data.id} data={data} />)
+      ) : (
+        <span>No Comment yet...</span>
+      )}
     </ul>
   );
 }

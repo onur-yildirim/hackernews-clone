@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { addSavedNews, removeSavedNews } from 'store/reducers/stories';
@@ -10,13 +12,13 @@ export default function SaveSection({ data }) {
 
   const isSaved = savedNews.find((news) => news.id === data.id);
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     if (isSaved) {
       dispatch(removeSavedNews(data.id));
     } else {
       dispatch(addSavedNews(data));
     }
-  };
+  }, [isSaved, data]);
 
   return (
     <SaveSectionWrapper onClick={() => handleClick()}>
