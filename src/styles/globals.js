@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
       overflow-x: hidden;
       margin: 0;
       padding: 0;
-      background-color:${props => props.theme.background}
+      background-color:${(props) => props.theme.background}
     }
     a {
       text-decoration: none;

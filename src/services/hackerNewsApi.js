@@ -11,11 +11,11 @@ const getPageSlice = (limit, page = 0) => ({ begin: page * limit, end: (page + 1
 const getPageValues = ({ begin, end, items }) => items.slice(begin, end);
 
 hackerNewsApi.getLatestStoryIds = () => client.get(`/newstories${JSON_QUERY}`);
-hackerNewsApi.getItem = id => client.get(`/item/${id}${JSON_QUERY}`);
+hackerNewsApi.getItem = (id) => client.get(`/item/${id}${JSON_QUERY}`);
 hackerNewsApi.getStoriesByPage = (ids, page) => {
   const { begin, end } = getPageSlice(PAGE_LIMIT, page);
   const activeIds = getPageValues({ begin, end, items: ids });
-  const storyPromises = activeIds.map(id => hackerNewsApi.getItem(id));
+  const storyPromises = activeIds.map((id) => hackerNewsApi.getItem(id));
   return Promise.all(storyPromises);
 };
 

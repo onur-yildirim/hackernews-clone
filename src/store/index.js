@@ -1,9 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit';
 import reducer from './reducers';
 
-const preLoadedState = {}
+const preLoadedState = {};
 export default configureStore({
-    reducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
-    preLoadedState
+  reducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
+  preLoadedState
 });

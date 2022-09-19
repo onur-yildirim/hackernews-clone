@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Item = styled.li`
   padding: 14px 5px;
-  &::marker{
+  &::marker {
     color: ${({ theme }) => theme.textSecondary};
     font-family: 'Ubuntu Mono';
     font-weight: 400;
@@ -10,7 +10,7 @@ export const Item = styled.li`
 `;
 
 export const Title = styled.h3`
-  font-family: "Ubuntu Mono"; 
+  font-family: 'Ubuntu Mono';
   color: ${({ theme }) => theme.text};
   margin-top: 0;
   margin-bottom: 6px;
@@ -19,10 +19,10 @@ export const Title = styled.h3`
 `;
 
 export const Host = styled.span`
-  font-family: "Open Sans"; 
+  font-family: 'Open Sans';
   color: ${({ theme }) => theme.textSecondary};
   font-size: 10px;
-  font-weight:400
+  font-weight: 400;
 `;
 
 export const ExternalLink = styled.a`
