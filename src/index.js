@@ -1,22 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-// import reportWebVitals from './reportWebVitals';
-import "@fontsource/ubuntu";
+import { BrowserRouter } from 'react-router-dom';
+import App from 'components/App';
+import "@fontsource/ubuntu-mono"
+import "@fontsource/ubuntu-mono/700.css"
 import "@fontsource/open-sans";
-import GlobalStyles from './styles/globals';
+import "@fontsource/open-sans/700.css";
+import { Provider } from 'react-redux'
+import store from 'store';
 
+
+const rootElement = document.getElementById("root");
 const renderApp = () => {
   ReactDOM.render(
     <div>
-      <GlobalStyles />
-      <App />
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
     </div>,
-    document.getElementById('root'),
+    rootElement,
   );
 }
 renderApp();
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
