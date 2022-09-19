@@ -3,9 +3,9 @@ export function timeAgo(time) {
   if (between < 3600) {
     return pluralize(~~(between / 60), ' minute');
   } else if (between < 60 * 60 * 24) {
-    return pluralize(~~((between / 60) * 60), ' hour');
+    return pluralize(~~(between / 3600), ' hour');
   } else {
-    return pluralize(~~((between / 60) * 60 * 24), ' day');
+    return pluralize(~~(between / 86400), ' day');
   }
 }
 
